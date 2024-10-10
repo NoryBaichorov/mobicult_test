@@ -87,7 +87,6 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    diff-lcs (1.5.1)
     drb (2.2.1)
     dry-core (1.0.1)
       concurrent-ruby (~> 1.0)
@@ -105,6 +104,7 @@ GEM
       dry-logic (~> 1.4)
       zeitwerk (~> 2.6)
     erubi (1.13.0)
+    ffaker (2.23.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     grape (2.2.0)
@@ -119,6 +119,18 @@ GEM
     irb (1.14.1)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -165,8 +177,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.7)
-    rack-cors (2.0.2)
-      rack (>= 2.0.0)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -212,23 +222,6 @@ GEM
       connection_pool
     reline (0.5.10)
       io-console (~> 0.5)
-    rspec-core (3.13.1)
-      rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.3)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.13.0)
-    rspec-mocks (3.13.2)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.13.0)
-    rspec-rails (7.0.1)
-      actionpack (>= 7.0)
-      activesupport (>= 7.0)
-      railties (>= 7.0)
-      rspec-core (~> 3.13)
-      rspec-expectations (~> 3.13)
-      rspec-mocks (~> 3.13)
-      rspec-support (~> 3.13)
-    rspec-support (3.13.1)
     ruby2_keywords (0.0.5)
     sidekiq (7.3.2)
       concurrent-ruby (< 2)
@@ -276,12 +269,12 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  ffaker
   grape
+  kaminari
   puma (>= 5.0)
-  rack-cors
   rails (~> 7.1.4)
   redis (>= 4.0.1)
-  rspec-rails (~> 7.0.0)
   sidekiq
   sqlite3 (>= 1.4)
   tzinfo-data
